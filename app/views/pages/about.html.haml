@@ -1,4 +1,1 @@
-- @sections.each do |section|
-  %h2= section.title
-  %h3= section.subtitle if section.subtitle.present?
-  %p= section.body
+= react_component 'AboutListing', sections: @sections.as_json
