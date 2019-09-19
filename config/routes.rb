@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get :home, to: 'pages#home'
   get :about, to: 'pages#about'
 
-  resources :categories, only: %i(index show) do
+  resources :categories, only: %i(show) do
     resources :products, only: %i(show)
   end
 end

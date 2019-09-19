@@ -5,10 +5,9 @@ import Grid from '@material-ui/core/Grid'
 
 import AboutSection from "./AboutSection"
 
-class AboutListing extends React.Component {
+class AboutList extends React.Component {
   render () {
     const {sections} = this.props;
-    console.log(sections)
     return (
       <React.Fragment>
         <Grid
@@ -26,7 +25,7 @@ class AboutListing extends React.Component {
   }
 }
 
-AboutListing.propTypes = {
+AboutList.propTypes = {
   sections: PropTypes.array
 };
-export default AboutListing
+export default AboutList

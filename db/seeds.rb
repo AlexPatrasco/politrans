@@ -25,3 +25,42 @@ AboutSection.create(
     Integer sed nibh sapien. Ut eu mauris rutrum, consequat tortor at, dignissim nibh. In cursus dui leo, ac tristique augue facilisis sit amet. Nulla ut viverra ex. Suspendisse egestas et eros quis ultricies. Mauris ac sapien eget velit finibus pretium. Morbi dictum, mauris pretium bibendum venenatis, metus nibh scelerisque tellus, at mollis nisl justo nec ipsum.
   )
 )
+
+car = ProductCategory.create(
+  name: "car",
+  order: 1,
+  visible: true
+)
+
+truck = ProductCategory.create(
+  name: "truck",
+  order: 2,
+  visible: true
+)
+
+van = ProductCategory.create(
+  name: "van",
+  order: 3,
+  visible: true
+)
+
+car.products.create(
+  name: "suspension",
+  order: 1,
+  description: "All about car suspension.",
+  visible: true
+)
+
+car.products.create(
+  name: "steering",
+  order: 2,
+  description: "All about car steering.",
+  visible: true
+)
+
+car.products.create(
+  name: "engine",
+  order: 3,
+  description: "All about car engines.",
+  visible: true
+)
