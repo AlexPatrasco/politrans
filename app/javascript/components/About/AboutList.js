@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Grid from '@material-ui/core/Grid'
+import Container from 'react-bootstrap/Container'
 
 import AboutSection from "./AboutSection"
 
@@ -10,16 +10,11 @@ class AboutList extends React.Component {
     const {sections} = this.props;
     return (
       <React.Fragment>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          { sections.map(s =>
-            <AboutSection section={s} key={s.id}/>
+        <Container>
+          { sections.map((s, i) =>
+            <AboutSection section={s} key={i}/>
           )}
-        </Grid>
+        </Container>
       </React.Fragment>
     );
   }

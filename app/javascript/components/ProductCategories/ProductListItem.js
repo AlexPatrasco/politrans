@@ -1,29 +1,35 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography';
+import Card from 'react-bootstrap/Card'
+
+import {capitalize} from "../../helpers/strings"
 
 class ProductListItem extends React.Component {
   render () {
-    const {product} = this.props;
+    const {product, category} = this.props;
+    const capitalizedProductName = capitalize(product.name);
     return (
       <React.Fragment>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <Typography variant="h2">
-            {product.name}
-          </Typography>
-          {(product.description !== "" && <Typography variant="subtitle1">
-              {product.description}
-            </Typography>
-          )}
-        </Grid>
+        <Card xs={12} sm={6} md={4}>
+          <Card.Body>
+            <Card.Title>
+              {capitalizedProductName}
+            </Card.Title>
+            {(product.description !== "" && <Card.Text>
+                {product.description}
+              </Card.Text>
+            )}
+            <Card.Link href={`/categories/${category}/products/${product.name}`}>View</Card.Link>
+          </Card.Body>
+        </Card>
       </React.Fragment>
     );
   }
 }
 
 ProductListItem.propTypes = {
-  product: PropTypes.object
+  category: PropTypes.string.required,
+  product: PropTypes.object.required
 };
 export default ProductListItem

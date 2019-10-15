@@ -1,52 +1,37 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
-import { withStyles } from '@material-ui/styles'
+import Container from 'react-bootstrap/Container'
+import CardColumns from 'react-bootstrap/CardColumns'
 
 import ProductListItem from './ProductListItem'
-
-const styles = theme => ({
-  root: {
-    padding: '1em',
-    textTransform: 'capitalize',
-  },
-});
+import {capitalize} from "../../helpers/strings"
 
 class ProductCategory extends React.Component {
   render () {
-    const {name, products, classes} = this.props;
+    const {name, products} = this.props;
     const hasProducts = Array.isArray(products) && products.length;
     return (
       <React.Fragment>
-        <Grid container>
-          <Grid item xs={12}>
-            <Paper className={classes.root}>
-              <Typography variant="h4">
-                {name}
-              </Typography>
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            {(hasProducts && <Grid
-                container
-                direction="row"
-                justify="center"
-                spacing={2}
-              >
-                { products.map(p =>
-                  <ProductListItem product={p} key={p.id}/>
+        <Container>
+          <div xs={12}>
+            <h3>
+              {capitalize(name)}
+            </h3>
+          </div>
+          <Container xs={12}>
+            {(hasProducts && <CardColumns>
+                { products.map((p, i) =>
+                  <ProductListItem product={p} category={name} key={i}/>
                 )}
-              </Grid>
+              </CardColumns>
             )}
-            {(!hasProducts && <Typography variant="h3">
+            {(!hasProducts && <h2>
                 There are no products for this category
-              </Typography>
+              </h2>
             )}
-          </Grid>
-        </Grid>
+          </Container>
+        </Container>
       </React.Fragment>
     );
   }
@@ -54,7 +39,6 @@ class ProductCategory extends React.Component {
 
 ProductCategory.propTypes = {
   name: PropTypes.string,
-  classes: PropTypes.object.isRequired,
   products: PropTypes.array
 };
-export default withStyles(styles)(ProductCategory)
+export default ProductCategory

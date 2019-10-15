@@ -14,10 +14,9 @@ class CategoryDropdown extends React.Component {
         <React.Fragment>
           <NavDropdown title={capitalizedName} id={name}>
             {
-              productList.map(productName => {
+              productList.map((productName, index) => {
                 const capitalizedProductName = capitalize(productName);
-                console.log(capitalizedProductName)
-                return <NavDropdown.Item href={`/categories/${name}/products/${capitalizedProductName}`}>{capitalizedProductName}</NavDropdown.Item>
+                return <NavDropdown.Item href={`/categories/${name}/products/${capitalizedProductName}`} key={index}>{capitalizedProductName}</NavDropdown.Item>
               })
             }
             <NavDropdown.Divider />

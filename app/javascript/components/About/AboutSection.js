@@ -1,8 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography';
+import Container from 'react-bootstrap/Container'
+import Card from 'react-bootstrap/Card'
+import Row from 'react-bootstrap/Row'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+
 
 import ReactHtmlParser from 'react-html-parser';
 
@@ -12,18 +15,24 @@ class AboutSection extends React.Component {
     const {section} = this.props;
     return (
       <React.Fragment>
-        <Grid item xs={12}>
-          <Typography variant="h2">
-            {section.title}
-          </Typography>
-          {(section.subtitle !== "" && <Typography variant="h6">
-              {section.subtitle}
-            </Typography>
-          )}
-          <Typography variant="subtitle1" component="span">
-            {ReactHtmlParser(section.body)}
-          </Typography>
-        </Grid>
+        <Jumbotron>
+          <Container xs={12}>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  {section.title}
+                </Card.Title>
+                {(section.subtitle !== "" && <Card.Subtitle className="mb-2 text-muted">
+                    {section.subtitle}
+                  </Card.Subtitle>
+                )}
+                <Card.Text>
+                  {ReactHtmlParser(section.body)}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Container>
+        </Jumbotron>
       </React.Fragment>
     );
   }
