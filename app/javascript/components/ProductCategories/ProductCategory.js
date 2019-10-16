@@ -15,14 +15,16 @@ class ProductCategory extends React.Component {
       <React.Fragment>
         <Container>
           <div xs={12}>
-            <h3>
-              {capitalize(name)}
-            </h3>
+            <Container xs={12}>
+              <h3>
+                {capitalize(name)}
+              </h3>
+            </Container>
           </div>
           <Container xs={12}>
             {(hasProducts && <CardColumns>
                 { products.map((p, i) =>
-                  <ProductListItem product={p} category={name} key={i}/>
+                  <ProductListItem product={p} category={name} key={i} xs={12} sm={6} lg={4}/>
                 )}
               </CardColumns>
             )}

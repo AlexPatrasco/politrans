@@ -10,7 +10,7 @@ class Header extends React.Component {
     const {productCategories} = this.props;
     return (
       <React.Fragment>
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
           <Navbar.Brand href="/">Politrans</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
@@ -27,6 +27,7 @@ class Header extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+        <br/>
       </React.Fragment>
     );
   }

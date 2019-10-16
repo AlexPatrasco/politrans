@@ -9,6 +9,8 @@ class ProductListItem extends React.Component {
   render () {
     const {product, category} = this.props;
     const capitalizedProductName = capitalize(product.name);
+    console.log(this.props)
+    console.log(product)
     return (
       <React.Fragment>
         <Card xs={12} sm={6} md={4}>
