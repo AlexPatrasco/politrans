@@ -22,7 +22,7 @@ class ProductCategory extends React.Component {
             </Container>
           </div>
           <Container xs={12}>
-            {(hasProducts && <CardColumns>
+            {(!!hasProducts && <CardColumns>
                 { products.map((p, i) =>
                   <ProductListItem product={p} category={name} key={i} xs={12} sm={6} lg={4}/>
                 )}

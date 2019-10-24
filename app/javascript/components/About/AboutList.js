@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import Container from 'react-bootstrap/Container'
 
 import AboutSection from "./AboutSection"
+import MapSection from "./MapSection"
+
 
 class AboutList extends React.Component {
   render () {
@@ -15,6 +17,7 @@ class AboutList extends React.Component {
             <AboutSection section={s} key={i}/>
           )}
         </Container>
+        <MapSection/>
       </React.Fragment>
     );
   }
