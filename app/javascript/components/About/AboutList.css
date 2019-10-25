@@ -1,0 +1,15 @@
+.row {
+  margin-top: .3em;
+  margin-bottom: .3em;
+  align-content: center;
+  align-self: center;
+}
+
+.row h2 {
+  margin-bottom: .1em;
+  margin-top: .1em;
+}
+
+.row form button {
+  width: 100%;
+}

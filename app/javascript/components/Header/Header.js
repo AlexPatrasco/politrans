@@ -27,7 +27,6 @@ class Header extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <br/>
       </React.Fragment>
     );
   }
