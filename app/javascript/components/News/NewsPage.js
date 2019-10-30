@@ -5,9 +5,9 @@ import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 import ReactHtmlParser from 'react-html-parser';
 
-class ProductPage extends React.Component {
+class NewsPage extends React.Component {
   render () {
-    const {name, description, imageLink} = this.props;
+    const {title, publishedAt, contents, imageLink} = this.props;
     return (
       <React.Fragment>
         <Container>
@@ -15,10 +15,13 @@ class ProductPage extends React.Component {
             <Card.Body>
               {imageLink && <Card.Img variant="top" src={imageLink} />}
               <Card.Title>
-                {name}
+                {title}
               </Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">
+                Published: {publishedAt}
+              </Card.Subtitle>
               <Card.Text>
-                {ReactHtmlParser(description)}
+                {ReactHtmlParser(contents)}
               </Card.Text>
             </Card.Body>
           </Card>
@@ -28,9 +31,11 @@ class ProductPage extends React.Component {
   }
 }
 
-ProductPage.propTypes = {
-  name: PropTypes.string.required,
-  description: PropTypes.string,
+NewsPage.propTypes = {
+  title: PropTypes.string.required,
+  publishedAt: PropTypes.string.required,
+  contents: PropTypes.string.required,
   imageLink: PropTypes.string,
 };
-export default ProductPage
+
+export default NewsPage

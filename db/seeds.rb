@@ -27,40 +27,54 @@ AboutSection.create(
 )
 
 car = ProductCategory.create(
-  name: "car",
+  name: "Car",
   order: 1,
   visible: true
 )
 
 truck = ProductCategory.create(
-  name: "truck",
+  name: "Truck",
   order: 2,
   visible: true
 )
 
 van = ProductCategory.create(
-  name: "van",
+  name: "Van",
   order: 3,
   visible: true
 )
 
 car.products.create(
-  name: "suspension",
+  name: "Suspension",
   order: 1,
   description: "All about car suspension.",
   visible: true
 )
 
 car.products.create(
-  name: "steering",
+  name: "Steering",
   order: 2,
   description: "All about car steering.",
   visible: true
 )
 
 car.products.create(
-  name: "engine",
+  name: "Engine",
   order: 3,
   description: "All about car engines.",
   visible: true
+)
+
+truck.products.create(
+  name: "Steering",
+  order: 1,
+  description: "All about truck steering.",
+  visible: true
+)
+
+News.create(
+  visible: true,
+  image_link: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-4hRzR2xBD3DMcMz8lYzkeBtd8LpI8SfocEGmIoo87s4SPhFk",
+  title: "Save a ton of money with us",
+  contents: "We are offering the best <strong>quality</strong> products for the <strong>lowest</strong> prices in the known <i>UNIVERSE</i>!"
 )

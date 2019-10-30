@@ -5,11 +5,10 @@ import Container from 'react-bootstrap/Container'
 import CardColumns from 'react-bootstrap/CardColumns'
 
 import ProductListItem from './ProductListItem'
-import {capitalize} from "../../helpers/strings"
 
 class ProductCategory extends React.Component {
   render () {
-    const {name, products} = this.props;
+    const {name, products, slug} = this.props;
     const hasProducts = Array.isArray(products) && products.length;
     return (
       <React.Fragment>
@@ -17,14 +16,14 @@ class ProductCategory extends React.Component {
           <div xs={12}>
             <Container xs={12}>
               <h3>
-                {capitalize(name)}
+                {name}
               </h3>
             </Container>
           </div>
           <Container xs={12}>
             {(!!hasProducts && <CardColumns>
                 { products.map((p, i) =>
-                  <ProductListItem product={p} category={name} key={i} xs={12} sm={6} lg={4}/>
+                  <ProductListItem product={p} categoryName={name} categorySlug={slug} key={i} xs={12} sm={6} lg={4}/>
                 )}
               </CardColumns>
             )}
@@ -40,7 +39,8 @@ class ProductCategory extends React.Component {
 }
 
 ProductCategory.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.required,
+  slug: PropTypes.string.required,
   products: PropTypes.array
 };
 export default ProductCategory

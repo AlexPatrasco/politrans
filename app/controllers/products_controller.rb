@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def show
-    @category = ProductCategory.visible.find_by(name: params[:category_id])
-    @product = @category.products.visible.find_by(name: params[:id])
+    @category = ProductCategory.visible.friendly.find(params[:category_id])
+    @product = @category.products.visible.friendly.find(params[:id])
   end
 end

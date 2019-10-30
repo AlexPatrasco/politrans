@@ -3,31 +3,28 @@ import PropTypes from "prop-types"
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Nav from 'react-bootstrap/Nav'
 
-import {capitalize} from "../../helpers/strings"
-
 class CategoryDropdown extends React.Component {
   render () {
-    const {name, productList} = this.props;
-    const capitalizedName = capitalize(name);
+    const {name, productList, slug} = this.props;
     if (productList && productList.length) {
       return (
         <React.Fragment>
-          <NavDropdown title={capitalizedName} id={name}>
+          <NavDropdown title={name} id={name} >
             {
-              productList.map((productName, index) => {
-                const capitalizedProductName = capitalize(productName);
-                return <NavDropdown.Item href={`/categories/${name}/products/${productName}`} key={index}>{capitalizedProductName}</NavDropdown.Item>
+              productList.map((product, index) => {
+                const [productName, productSlug] = product;
+                return <NavDropdown.Item href={`/categories/${slug}/products/${productSlug}`} key={index}>{productName}</NavDropdown.Item>
               })
             }
             <NavDropdown.Divider />
-            <NavDropdown.Item href={`/categories/${name}`}>View all</NavDropdown.Item>
+            <NavDropdown.Item href={`/categories/${slug}`}>View all</NavDropdown.Item>
           </NavDropdown>
         </React.Fragment>
       );
     }
     return (
       <React.Fragment>
-        <Nav.Link href={`/categories/${name}`}>{capitalizedName}</Nav.Link>
+        <Nav.Link href={`/categories/${slug}`}>{name}</Nav.Link>
       </React.Fragment>
     );
 
@@ -36,6 +33,7 @@ class CategoryDropdown extends React.Component {
 
 CategoryDropdown.propTypes = {
   name: PropTypes.string.required,
+  slug: PropTypes.string.required,
   productList: PropTypes.array
 };
 export default CategoryDropdown

@@ -10,9 +10,6 @@ import MapSection from "./MapSection"
 import ContactSection from "./ContactSection"
 import "./AboutList.css"
 
-
-
-
 class AboutList extends React.Component {
   render () {
     const {sections} = this.props;

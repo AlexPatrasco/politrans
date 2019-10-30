@@ -17,8 +17,8 @@ class Header extends React.Component {
             <Nav className="mr-auto">
               {
                 Object.keys(productCategories).map((name, index) => {
-                  const products = productCategories[name];
-                  return <CategoryDropdown name={name} productList={products} key={index} />
+                  const {slug, products} = productCategories[name];
+                  return <CategoryDropdown name={name} slug={slug} productList={products} key={index} />
                 }
               )}
               <Nav.Link href="/news">News</Nav.Link>
