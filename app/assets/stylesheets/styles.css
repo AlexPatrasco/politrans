@@ -45,3 +45,9 @@ body {
   color: #fff;
   text-align: center;
 }
+
+.carousel-item img{
+    height: 25rem;
+    width: auto;
+    max-width: 100%;
+}

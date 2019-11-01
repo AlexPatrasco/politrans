@@ -32,8 +32,8 @@ class CategoryDropdown extends React.Component {
 }
 
 CategoryDropdown.propTypes = {
-  name: PropTypes.string.required,
-  slug: PropTypes.string.required,
+  name: PropTypes.string,
+  slug: PropTypes.string,
   productList: PropTypes.array
 };
 export default CategoryDropdown

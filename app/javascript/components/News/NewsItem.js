@@ -24,4 +24,8 @@ class NewsItem extends React.Component {
   }
 }
 
+NewsItem.propTypes = {
+  article: PropTypes.object.required,
+};
+
 export default NewsItem

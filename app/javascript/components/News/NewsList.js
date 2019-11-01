@@ -31,7 +31,7 @@ class NewsList extends React.Component {
 }
 
 NewsList.propTypes = {
-  newsList: PropTypes.string.required,
+  newsList: PropTypes.array,
 };
 
 export default NewsList

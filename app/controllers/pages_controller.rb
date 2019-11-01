@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :contact
-  def home
 
+  def home
+    @news = News.visible.limit(3)
+    puts @news
+    @promotions = Promotion.visible.where("ends_at > ?", DateTime.now).limit(4)
   end
 
   def about

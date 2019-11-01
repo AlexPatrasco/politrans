@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+AboutSection.destroy_all
+ProductCategory.destroy_all
+Product.destroy_all
+News.destroy_all
+Promotion.destroy_all
+
+
 AboutSection.create(
   title: "Our History",
   order: 0,
@@ -76,5 +83,36 @@ News.create(
   visible: true,
   image_link: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-4hRzR2xBD3DMcMz8lYzkeBtd8LpI8SfocEGmIoo87s4SPhFk",
   title: "Save a ton of money with us",
-  contents: "We are offering the best <strong>quality</strong> products for the <strong>lowest</strong> prices in the known <i>UNIVERSE</i>!"
+  contents: "We are offering the best <strong>quality</strong> products for the <strong>lowest</strong> prices in the known <i>UNIVERSE</i>! <br/> <p>Nulla at massa semper, posuere leo quis, maximus quam. Maecenas mattis, ligula vitae dictum tempus, ante massa porttitor libero, nec pellentesque nulla nibh nec tortor. In a nisi non magna porttitor pulvinar. Nulla euismod nec mi quis vulputate. Praesent maximus tempus eleifend. In venenatis, mauris pretium euismod sollicitudin, lacus magna auctor sem, non finibus justo neque at purus. Praesent quis tellus malesuada, consequat risus sed, tristique erat.
+    Integer sed nibh sapien. Ut eu mauris rutrum, consequat tortor at, dignissim nibh. In cursus dui leo, ac tristique augue facilisis sit amet. Nulla ut viverra ex.</p>"
+)
+
+Promotion.create(
+  title: "Christmas SALE",
+  visible: true,
+  starts_at: Date.new(2019, 12, 15),
+  ends_at: Date.new(2020, 1, 3),
+  description: "<h3> Save a lot during this Christmas!</h3><br/><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim blandit nulla, non mattis neque commodo nec. In id nulla vulputate ex varius pharetra quis et mauris. Duis scelerisque tincidunt lobortis. Vivamus blandit est id fringilla hendrerit. Quisque a libero ligula. Ut faucibus leo in felis iaculis auctor. Quisque tempus purus in nulla congue, sed vulputate nulla interdum.
+    Curabitur in tortor at justo tempus dapibus. Ut at nisl malesuada nisl cursus posuere. Aliquam commodo condimentum urna id dapibus.</p>",
+  image_link: "https://timedotcom.files.wordpress.com/2019/06/what-is-half-christmas-workaholics.jpg",
+)
+
+Promotion.create(
+  title: "Past deals",
+  visible: true,
+  starts_at: 1.month.ago,
+  ends_at: 10.days.ago,
+  description: "<h3> A bit too late =(</h3><br/><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim blandit nulla, non mattis neque commodo nec. In id nulla vulputate ex varius pharetra quis et mauris. Duis scelerisque tincidunt lobortis. Vivamus blandit est id fringilla hendrerit. Quisque a libero ligula. Ut faucibus leo in felis iaculis auctor. Quisque tempus purus in nulla congue, sed vulputate nulla interdum.
+    Curabitur in tortor at justo tempus dapibus. Ut at nisl malesuada nisl cursus posuere. Aliquam commodo condimentum urna id dapibus.</p>",
+  image_link: "https://stayuplate.org/wp-content/uploads/2018/05/logo.png",
+)
+
+Promotion.create(
+  title: "Current deal",
+  visible: true,
+  starts_at: 1.month.ago,
+  ends_at: 1.month.from_now,
+  description: "<h3> Don't miss it!</h3><br/><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim blandit nulla, non mattis neque commodo nec. In id nulla vulputate ex varius pharetra quis et mauris. Duis scelerisque tincidunt lobortis. Vivamus blandit est id fringilla hendrerit. Quisque a libero ligula. Ut faucibus leo in felis iaculis auctor. Quisque tempus purus in nulla congue, sed vulputate nulla interdum.
+    Curabitur in tortor at justo tempus dapibus. Ut at nisl malesuada nisl cursus posuere. Aliquam commodo condimentum urna id dapibus.</p>",
+  image_link: "https://yt3.ggpht.com/a/AGF-l7_X-SVkKKTbmNhVpRvH5qR6mC8AnKbT7yRNBw=s900-c-k-c0xffffffff-no-rj-mo",
 )
