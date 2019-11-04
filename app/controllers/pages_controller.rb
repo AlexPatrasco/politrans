@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def about
     @sections = AboutSection.visible.order(order: :asc)
+    @api_key ||= Rails.application.credentials.gmaps[:api_key]
   end
 
   def contact

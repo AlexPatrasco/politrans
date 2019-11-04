@@ -17,7 +17,7 @@ import "./AboutList.css"
 
 class AboutList extends React.Component {
   render () {
-    const {sections} = this.props;
+    const {sections, mapURL} = this.props;
     return (
       <React.Fragment>
         <Row>
@@ -74,7 +74,7 @@ class AboutList extends React.Component {
             <hr/>
           </Container>
           <Container>
-            <MapSection/>
+            <MapSection googleMapURL={mapURL} />
           </Container>
         </Row>
       </React.Fragment>

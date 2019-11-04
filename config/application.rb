@@ -14,6 +14,18 @@ module Politrans
     config.time_zone = "UTC"
     config.active_record.default_timezone = :utc
 
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.smtp_settings = {
+      address:              Rails.application.credentials.smtp[:address],
+      port:                 587,
+      domain:               Rails.application.credentials.smtp[:domain],
+      user_name:            Rails.application.credentials.smtp[:username],
+      password:             Rails.application.credentials.smtp[:password],
+      authentication:       :plain,
+      enable_starttls_auto: true
+    }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
