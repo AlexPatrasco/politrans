@@ -1,0 +1,19 @@
+
+defaults: &defaults
+  google:
+    maps_api_key: YOUR_GOOGLE_MAPS_API_KEY_V3
+  smtp_settings:
+    address:              smtp.example.com
+    port:                 587
+    domain:               yourdomain.com
+    user_name:            username@gmail.com
+    password:             yourpassword
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
