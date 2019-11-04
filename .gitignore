@@ -34,6 +34,5 @@
 yarn-debug.log*
 .yarn-integrity
 
-config/application.yml
 config/database.yml
 config/webpacker.yml
