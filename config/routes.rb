@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :administrators
   namespace :admin do
       resources :about_sections
       resources :news
