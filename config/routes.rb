@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :about_sections
+      resources :news
+      resources :products
+      resources :product_categories
+      resources :promotions
+
+      root to: "about_sections#index"
+    end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'pages#home'
